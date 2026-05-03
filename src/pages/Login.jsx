@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ollaImg from "../assets/images/olla.jpg";
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 function Login({ onSubmit }) {
   const [email, setEmail] = useState("");
@@ -19,13 +20,38 @@ function Login({ onSubmit }) {
       return;
     }
 
-    setLoading(true);
-    // Simular petición al servidor
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess("Inicio de sesión exitoso (simulado).");
-      onSubmit?.({ email, remember });
-    }, 900);
+    try {
+			setLoading(true);
+      const response = await fetch(`${API_URL}/api/login`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ email, password }),
+			});
+
+      const rawBody = await response.text();
+      let data = {};
+
+      if (rawBody) {
+        try {
+          data = JSON.parse(rawBody);
+        } catch {
+          data = { message: rawBody };
+        }
+      }
+
+			if (!response.ok) {
+				throw new Error(data.message || 'No se pudo iniciar sesión.');
+			}
+
+			setSuccess('Inicio de sesión exitoso.');
+			onSubmit?.({ user: data.user, remember });
+		} catch (requestError) {
+			setError(requestError instanceof Error ? requestError.message : 'Error inesperado');
+		} finally {
+			setLoading(false);
+		}
   };
 
   return (
