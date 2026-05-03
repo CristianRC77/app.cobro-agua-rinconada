@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ollaImg from "../assets/images/olla.jpg";
 
 function Login({ onSubmit }) {
   const [email, setEmail] = useState("");
@@ -36,7 +37,7 @@ function Login({ onSubmit }) {
             Bienvenid@s
           </h3>
           <img
-            src="/public/images/olla.jpg"
+            src={ollaImg}
             alt="Ilustración de bienvenida"
             className="w-full h-auto mb-4 rounded-full"
           />

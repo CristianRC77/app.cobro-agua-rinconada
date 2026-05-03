@@ -1,9 +1,9 @@
-import Imagen1 from '/images/naturaleza1.jpg'
-import Imagen2 from '/images/naturaleza2.jpg'
-import Imagen3 from '/public/images/naturaleza3.jpg'
-import Imagen4 from '/images/naturaleza4.jpg'
-import Imagen5 from '/images/naturaleza5.jpg'
-import Imagen6 from '/images/naturaleza6.jpg'
+import Imagen1 from '../assets/images/naturaleza1.jpg'
+import Imagen2 from '../assets/images/naturaleza2.jpg'
+import Imagen3 from '../assets/images/naturaleza3.jpg'
+import Imagen4 from '../assets/images/naturaleza4.jpg'
+import Imagen5 from '../assets/images/naturaleza5.jpg'
+import Imagen6 from '../assets/images/naturaleza6.jpg'
 import '../index.css'
 function Galeria() {
   return (
