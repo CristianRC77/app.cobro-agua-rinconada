@@ -1,0 +1,271 @@
+/* ============================================================================
+   ESTILOS GENERALES
+   ============================================================================ */
+
+:root {
+  --primary-color: #28a745;
+  --secondary-color: #6c757d;
+  --accent-color: #ffc107;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --nav-height: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+header.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e7e34 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header.hero h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+header.hero .btn {
+  font-size: 1.1rem;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+header.hero .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================================
+   NAVBAR
+   ============================================================================ */
+
+.navbar {
+  background-color: #1e7e34 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar-brand i {
+  margin-right: 8px;
+  color: #ffc107;
+}
+
+.nav-link {
+  transition: color 0.3s;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* ============================================================================
+   FEATURES SECTION
+   ============================================================================ */
+
+.features-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.btn-custom-outline {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.btn-custom-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================================
+   ADVENTURE CARDS
+   ============================================================================ */
+
+.adventure-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.adventure-card:hover {
+  transform: scale(1.05);
+}
+
+.adventure-card img {
+  display: block;
+  width: 100%;
+}
+
+.adventure-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(40, 167, 69, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.adventure-card:hover .adventure-overlay {
+  opacity: 1;
+}
+
+/* ============================================================================
+   GALERÍA
+   ============================================================================ */
+
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  transition: transform 0.3s;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* ============================================================================
+   CONTACT FORM
+   ============================================================================ */
+
+#contacto {
+  background-color: var(--light-bg);
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+footer {
+  background-color: #1e7e34;
+  color: white;
+}
+
+footer a {
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffc107 !important;
+}
+
+/* ============================================================================
+   MODAL STYLES
+   ============================================================================ */
+
+.modal-backdrop.show {
+  backdrop-filter: blur(3px);
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.btn-close-white:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2rem;
+  }
+
+  header.hero p {
+    font-size: 1rem;
+  }
+
+  .features-icon {
+    font-size: 2rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
